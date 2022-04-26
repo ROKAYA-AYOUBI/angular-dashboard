@@ -20,7 +20,8 @@ export class NavbarComponent implements OnInit {
   public listTitles: any[];
   public location: Location;
   sidenavOpen: boolean = true;
-  info: any;
+
+  currentUser: any;
 
 
 
@@ -59,12 +60,19 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.listTitles = ROUTES.filter(listTitle => listTitle);
-    this.info = {
+    this.currentUser = this.token.getUser();
+    /*this.info = {
       token: this.token.getToken(),
       username: this.token.getUsername(),
       authorities: this.token.getAuthorities()
-    };
+    };*/
   }
+
+    logout() {
+      this.token.signOut();
+      window.location.reload();
+    }
+
 
 
   getTitle() {
@@ -128,8 +136,4 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-  logout() {
-    this.token.signOut();
-    window.location.reload();
-  }
 }

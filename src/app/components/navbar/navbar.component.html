@@ -300,9 +300,10 @@
                         src="assets/img/theme/team-4.jpg"
                 />
               </span>
-              <div class="media-body ml-2 d-none d-lg-block" *ngIf="info.token">
-                <span class="mb-0 text-sm  font-weight-bold">{{info.username}}</span>
+              <div class="media-body ml-2 d-none d-lg-block"  *ngIf="currentUser">
+                <span class="mb-0 text-sm  font-weight-bold">{{ currentUser.username }}</span>
               </div>
+
             </div>
           </a>
           <div
@@ -343,7 +344,7 @@
             <div class="dropdown-divider"></div>
             <a href="javascript:void()" class="dropdown-item">
 
-              <div *ngIf="info.token; else loggedOut">
+              <div *ngIf="currentUser; else loggedOut">
                 <button class="btn btn-secondary" (click)="logout()">Logout</button>
               </div>
             </a>
@@ -351,6 +352,8 @@
             <ng-template #loggedOut>
               <i class="ni ni-user-run"></i> <span>Login</span>
             </ng-template>
+
+
           </div>
         </li>
       </ul>
@@ -362,3 +365,5 @@
         class="backdrop d-xl-none"
         (click)="toggleSidenav()"
 ></div>
+
+

@@ -1,3 +1,10 @@
+
+
+
+
+
+<!--
+
 <div
         class=" header pb-6 d-flex align-items-center"
         style="min-height: 500px; background-image: url(assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;"
@@ -310,12 +317,14 @@
         </div>
 
         <div class=" card-body">
+  //form
           <form>
             <h6 class=" heading-small text-muted mb-4">User information</h6>
 
             <div class=" pl-lg-4">
               <div class=" row">
                 <div class=" col-lg-6">
+  //username
                   <div class=" form-group">
                     <label class=" form-control-label" for="input-username">
                       Username
@@ -332,6 +341,7 @@
                 </div>
 
                 <div class=" col-lg-6">
+  //email
                   <div class=" form-group">
                     <label class=" form-control-label" for="input-email">
                       Email address
@@ -349,6 +359,7 @@
 
               <div class=" row">
                 <div class=" col-lg-6">
+  // First name
                   <div class=" form-group">
                     <label class=" form-control-label" for="input-first-name">
                       First name
@@ -365,6 +376,7 @@
                 </div>
 
                 <div class=" col-lg-6">
+//Last name
                   <div class=" form-group">
                     <label class=" form-control-label" for="input-last-name">
                       Last name
@@ -389,6 +401,7 @@
             <div class=" pl-lg-4">
               <div class=" row">
                 <div class=" col-md-12">
+ //Address
                   <div class=" form-group">
                     <label class=" form-control-label" for="input-address">
                       Address
@@ -407,6 +420,7 @@
 
               <div class=" row">
                 <div class=" col-lg-4">
+//City
                   <div class=" form-group">
                     <label class=" form-control-label" for="input-city">
                       City
@@ -424,6 +438,7 @@
 
                 <div class=" col-lg-4">
                   <div class=" form-group">
+ //Country
                     <label class=" form-control-label" for="input-country">
                       Country
                     </label>
@@ -438,25 +453,12 @@
                   </div>
                 </div>
 
-                <div class=" col-lg-4">
-                  <div class=" form-group">
-                    <label class=" form-control-label" for="input-country">
-                      Postal code
-                    </label>
 
-                    <input
-                            class=" form-control"
-                            id="input-postal-code"
-                            placeholder="Postal code"
-                            type="number"
-                    />
-                  </div>
-                </div>
               </div>
             </div>
 
             <hr class=" my-4" />
-
+//About me
             <h6 class=" heading-small text-muted mb-4">About me</h6>
 
             <div class=" pl-lg-4">
@@ -474,6 +476,11 @@ A beautiful premium dashboard for Bootstrap 4.
               </div>
             </div>
           </form>
+
+
+
+
+          //
         </div>
       </div>
     </div>
@@ -484,21 +491,6 @@ A beautiful premium dashboard for Bootstrap 4.
 
 
 
-<!--
 
-<div *ngIf="info.token; else loggedOut">
-  <h5 class="text-primary">Your Information</h5>
-  <p>
-    <strong>Username:</strong> {{info.username}}<br/>
-    <strong>Roles:</strong> {{info.authorities}}<br />
-    <strong>Token:</strong> {{info.token}}.
-  </p>
-  <button class="btn btn-secondary" (click)="logout()">Logout</button>
-</div>
 
-<ng-template #loggedOut>
-  Please login.
-</ng-template>
 -->
-
-
