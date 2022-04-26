@@ -1,5 +1,6 @@
 export class SignUpInfo {
-   // name: string;
+   nom: string;
+   prenom:string;
     username: string;
     email: string;
     role: string[];

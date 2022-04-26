@@ -2,11 +2,13 @@ import { Component, OnInit, ElementRef } from "@angular/core";
 import { ROUTES } from "../sidebar/sidebar.component";
 import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
 
+
 import {
   Location,
   LocationStrategy,
   PathLocationStrategy
 } from "@angular/common";
+import {TokenStorageService} from '../../services/token-storage.service';
 
 @Component({
   selector: "app-navbar",
@@ -18,10 +20,16 @@ export class NavbarComponent implements OnInit {
   public listTitles: any[];
   public location: Location;
   sidenavOpen: boolean = true;
+  info: any;
+
+
+
   constructor(
     location: Location,
     private element: ElementRef,
-    private router: Router
+    private router: Router,
+    private token: TokenStorageService
+
   ) {
     this.location = location;
     this.router.events.subscribe((event: Event) => {
@@ -51,7 +59,14 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.listTitles = ROUTES.filter(listTitle => listTitle);
+    this.info = {
+      token: this.token.getToken(),
+      username: this.token.getUsername(),
+      authorities: this.token.getAuthorities()
+    };
   }
+
+
   getTitle() {
     var titlee = this.location.prepareExternalUrl(this.location.path());
     if (titlee.charAt(0) === "#") {
@@ -111,5 +126,10 @@ export class NavbarComponent implements OnInit {
       document.body.classList.remove("g-sidenav-hidden");
       this.sidenavOpen = true;
     }
+  }
+
+  logout() {
+    this.token.signOut();
+    window.location.reload();
   }
 }
