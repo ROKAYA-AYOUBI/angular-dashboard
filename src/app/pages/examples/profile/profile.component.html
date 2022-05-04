@@ -1,5 +1,68 @@
 
+<!-- Demo header-->
+<section class="pb-5 header text-center">
+    <form >
+    <div class="container py-5 text-white">
+        <header class="py-5">
+            <h1 class="display-4">La list d'utilisateurs</h1>
 
+
+        </header>
+
+ <div class="row">
+            <div class="col-lg-11 mx-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-body p-5">
+
+                        <!-- Responsive table -->
+                        <div class="table-responsive">
+                            <table class="table m-0" *ngIf="listusers">
+                                <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">UserName</th>
+                                    <th scope="col">Email</th>
+
+                                    <th scope="col">Action</th>
+
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor = "let u of listusers">
+                                    <td>{{u.id}}</td>
+                                    <td>{{u.username}}</td>
+                                    <td>{{u.email}}</td>
+
+
+                                    <td>
+                                        <!-- Call to action buttons -->
+                                        <ul class="list-inline m-0">
+                                            <li class="list-inline-item">
+                                                <button class="btn btn-warning btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Detai"  (click)="detailUser(u.id)"
+                                                       ><i class="fa fa-info"></i></button>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <button class="btn btn-success btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit" (click)="updateUser(u.id)"><i class="fa fa-edit"></i></button>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <button class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete" (click)="deleteuser(u.id)"><i class="fa fa-trash"></i></button>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</section>
+<router-outlet></router-outlet>
 
 
 

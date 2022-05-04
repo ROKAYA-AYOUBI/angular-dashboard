@@ -5,6 +5,8 @@ import { PricingComponent } from "../../pages/examples/pricing/pricing.component
 import { LockComponent } from "../../pages/examples/lock/lock.component";
 import { RegisterComponent } from "../../pages/examples/register/register.component";
 import { PresentationComponent } from "../../pages/presentation/presentation.component";
+import {ListusersComponent} from '../../pages/examples/listusers/listusers.component';
+import {TimelineComponent} from '../../pages/examples/timeline/timeline.component';
 
 export const AuthLayoutRoutes: Routes = [
   {
@@ -38,8 +40,17 @@ export const AuthLayoutRoutes: Routes = [
     path: "",
     children: [
       {
-        path: "pricing",
+        path: "pricing/:id",
         component: PricingComponent
+      }
+    ]
+  },
+  {
+    path:"",
+    children:[
+      {
+        path:"timeline/:id",
+        component: TimelineComponent
       }
     ]
   }

@@ -17,12 +17,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ComponentsModule } from "./components/components.module";
 
 import { AppRoutingModule } from './app-routing.module';
+import { ListusersComponent } from './pages/examples/listusers/listusers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
+    ListusersComponent
   ],
   imports: [
     BrowserAnimationsModule,

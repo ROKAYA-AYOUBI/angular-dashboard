@@ -1,11 +1,13 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 import {TokenStorageService} from '../../../services/token-storage.service';
 
 @Component({
-  selector: "app-pricing",
-  templateUrl: "pricing.component.html"
+  selector: 'app-listusers',
+  templateUrl: './listusers.component.html',
+  styleUrls: ['./listusers.component.scss']
 })
-export class PricingComponent implements OnInit {
+export class ListusersComponent implements OnInit {
+
   currentUser: any;
 
   constructor(private token: TokenStorageService) { }
@@ -13,4 +15,5 @@ export class PricingComponent implements OnInit {
   ngOnInit(): void {
     this.currentUser = this.token.getUser();
   }
+
 }

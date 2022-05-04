@@ -55,7 +55,7 @@ export const ROUTES: RouteInfo[] = [
       { path: "register", title: "Register", type: "link" },
       { path: "lock", title: "Lock", type: "link" },
       { path: "timeline", title: "Timeline", type: "link" },
-      { path: "profile", title: "Profile", type: "link" }
+      { path: "profile", title: "List", type: "link" }
     ]
   },
   {

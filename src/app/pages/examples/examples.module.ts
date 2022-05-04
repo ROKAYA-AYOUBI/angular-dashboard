@@ -8,14 +8,17 @@ import { TimelineComponent } from "./timeline/timeline.component";
 
 import { RouterModule } from "@angular/router";
 import { ExamplesRoutes } from "./examples.routing";
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [ProfileComponent, TimelineComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(ExamplesRoutes),
-    ProgressbarModule.forRoot(),
-    CollapseModule.forRoot()
-  ]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(ExamplesRoutes),
+        ProgressbarModule.forRoot(),
+        CollapseModule.forRoot(),
+        ReactiveFormsModule,
+        FormsModule
+    ]
 })
 export class ExamplesModule {}
